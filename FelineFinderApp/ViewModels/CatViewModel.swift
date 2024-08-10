@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class CatViewModel: ObservableObject {
@@ -33,7 +34,9 @@ class CatViewModel: ObservableObject {
         do {
             state = .loading
             catImages = try await apiClient.fetchCatImages(breedID: breed.id)
-            state = .loaded
+            withAnimation {
+                state = .loaded
+            }
         } catch {
             print("Error: \(error)")
             state = .error

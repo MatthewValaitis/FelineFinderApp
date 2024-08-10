@@ -15,6 +15,7 @@ struct FelineFinderAppApp: App {
     var body: some Scene {
         WindowGroup {
             BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatAPIClient()))
+                .environmentObject(imageLoader)
         }
     }
 }

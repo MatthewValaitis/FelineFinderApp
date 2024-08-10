@@ -21,6 +21,8 @@ final class BreedSelectionViewModel {
     private(set) var state: ViewState = .loading
     private(set) var breeds: [BreedDetails] = []
     
+    var searchText: String = ""
+    
     init(apiClient: APIClient) {
         self.apiClient = apiClient
     }
@@ -35,6 +37,14 @@ final class BreedSelectionViewModel {
         } catch {
             print("Could not fetch breeds")
             state = .error
+        }
+    }
+    
+    func filteredBreeds() -> [BreedDetails] {
+        if searchText.isEmpty {
+            return breeds
+        } else {
+            return breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
     }
 }

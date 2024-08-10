@@ -34,15 +34,15 @@ struct BreedSelectionView: View {
                     await viewModel.setBreeds()
                 }
             }
+            .searchable(text: $viewModel.searchText, prompt: "Search Breeds")
         }
     }
     
     var breedList: some View {
             List {
-                ForEach(viewModel.breeds, id: \.self) { breed in
+                ForEach(viewModel.filteredBreeds(), id: \.self) { breed in
                     NavigationLink(value: breed) {
                         Text(breed.name)
-                            .foregroundColor(.black)
                     }
                 }
             }

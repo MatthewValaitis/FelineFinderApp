@@ -28,6 +28,8 @@ struct CatGalleryView: View {
                 ContentUnavailableView("Cat Gallery Failed To Load", systemImage: "xmark")
             }
         }
+        .navigationTitle(breedDetails.name)
+        .frame(maxHeight: .infinity, alignment: .top)
         .onAppear {
             Task {
                 await viewModel.setCatImages(for: breedDetails)
@@ -37,68 +39,68 @@ struct CatGalleryView: View {
     
     var detailsTextView: some View {
         VStack(spacing: 10) {
-            Text(breedDetails.name)
-                .font(.title)
             Divider()
             Text(breedDetails.description)
                 .font(.body)
                 .multilineTextAlignment(.leading)
+            Divider()
             VStack(alignment: .leading, spacing: 10) {
                 Text("Life span: \(breedDetails.lifeSpan)")
                 Text("Place of origin: \(breedDetails.origin)")
                 Text("Temperament: \(breedDetails.temperament)")
             }
-            .padding(10)
             .font(.caption)
             .multilineTextAlignment(.leading)
             .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(30)
+        .padding(20)
     }
     
     var imageGalleryView: some View {
-        ScrollView(.horizontal) {
-            LazyHStack(spacing: 16) {
-                ForEach(viewModel.catImages) { catImage in
-                    HStack {
-                        NavigationLink(value: breedDetails) {
-                            CachedAsyncImage(url: catImage.url)
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 300, height: 300)
-                                .cornerRadius(8.0)
-                                .environmentObject(imageLoader)
-                        }
-                        .padding(.leading, 10)
-                        .scrollTransition{ content, phase in
-                            content
-                                .opacity(phase.isIdentity ? 1 : 0)
-                                .offset(y: phase.isIdentity ? 0 : 60)
-                                .scaleEffect(phase.isIdentity ? 1 : 0.5)
-                        }
-                        .onTapGesture {
-                            withAnimation(.spring()) {
-                                selectedImage = catImage
+        VStack {
+            Text("Gallery")
+                .font(.title)
+                .padding(.horizontal, 10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 16) {
+                    ForEach(viewModel.catImages) { catImage in
+                        NavigationLink(value: catImage) {
+                            HStack {
+                                CachedAsyncImage(url: catImage.url)
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 300, height: 300)
+                                    .cornerRadius(8.0)
+                                    .padding(.leading, 10)
+                                    .scrollTransition{ content, phase in
+                                        content
+                                            .opacity(phase.isIdentity ? 1 : 0.3)
+                                            .offset(y: phase.isIdentity ? 0 : 60)
+                                            .scaleEffect(phase.isIdentity ? 1 : 0.7)
+                                    }
                             }
                         }
                     }
                 }
             }
-        }
-        .ignoresSafeArea()
-        .scrollTargetLayout()
-        .scrollTargetBehavior(.viewAligned)
-        .scrollBounceBehavior(.basedOnSize)
-        .sheet(item: $selectedImage) { cat in
-            ExpandedImageView(url: cat.url)
+            .navigationDestination(for: CatModel.self, destination: { catImage in
+                ExpandedImageView(url: catImage.url)
+            })
+            .ignoresSafeArea()
+            .scrollTargetLayout()
+            .scrollTargetBehavior(.viewAligned)
+            .scrollBounceBehavior(.basedOnSize)
         }
     }
     
     var breedDetailsView: some View {
         ZStack(alignment: .top) {
-            VStack {
+            VStack(spacing: 0) {
                 detailsTextView
                 imageGalleryView
+                
+                Spacer()
             }
         }
     }

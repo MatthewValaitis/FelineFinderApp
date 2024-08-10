@@ -46,7 +46,29 @@ final class FelineFinderAppTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.breeds, breedDetails)
     }
-
+    
+    func test_Given_SearchText_When_FilteredBreeds_Then_ReturnsCorrectBreeds() async throws {
+        // Given
+        let searchText = "curl"
+        let breedDetails = [
+            BreedDetails.stub(name: "American Curl"),
+            BreedDetails.stub(name: "American Shorthair")]
+        
+        let mockAPIClient = MockAPIClient(breedDetails: breedDetails)
+        let sut = BreedSelectionViewModel(apiClient: mockAPIClient)
+        
+        await sut.setBreeds()
+        
+        // When
+        sut.searchText = searchText
+        let filteredDetails = sut.filteredBreeds()
+        
+        // Then
+        XCTAssertEqual(filteredDetails.count, 1)
+        let filteredDetail = try XCTUnwrap(filteredDetails.first)
+        XCTAssertEqual(filteredDetail.name, "American Curl")
+        
+    }
 }
 
 // MARK: Breed Details Stub
