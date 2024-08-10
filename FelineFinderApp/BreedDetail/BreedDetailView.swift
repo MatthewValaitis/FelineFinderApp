@@ -17,7 +17,6 @@ struct BreedDetailsView: View {
     let breedDetails: BreedDetails
     
     var body: some View {
-
             Group {
                 switch viewModel.state {
                 case .loading:
@@ -76,7 +75,7 @@ struct BreedDetailsView: View {
             .frame(height: 1)
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 10)
-            .foregroundColor(ColorPalette.baige)
+            .foregroundColor(ColorPalette.beige)
     }
     
     var descriptionText: some View {
@@ -170,7 +169,7 @@ struct BreedDetailsView: View {
                         breeds: []
                     ),
                     CatModel(
-                        id: "beng",
+                        id: "beng2",
                         width: 1000,
                         height: 1000,
                         url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,

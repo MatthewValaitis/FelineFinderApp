@@ -25,6 +25,7 @@ struct BreedSelectionView: View {
                         .foregroundColor(.red)
                 }
             }
+
             .navigationTitle("Cat Breeds")
             .navigationDestination(for: BreedDetails.self) { breed in
                 BreedDetailsView(viewModel: BreedDetailViewModel(apiClient: viewModel.apiClient), breedDetails: breed)
@@ -49,19 +50,38 @@ struct BreedSelectionView: View {
 
                         Text("\(breed.origin)")
                             .font(.subheadline)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 6)
                             .padding(.vertical, 3)
-                            .background(Capsule().fill(ColorPalette.blush))
                     }
+                    .foregroundColor(.white)
                     .padding(.vertical, 5)
                 }
+                .listRowBackground(ColorPalette.blush)
             }
         }
+
     }
 }
 
 #Preview {
-    BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatAPIClient()))
-        .environmentObject(ImageLoader(cacheManager: CacheManager()))
+    BreedSelectionView(
+        viewModel: BreedSelectionViewModel(
+            apiClient: MockAPIClient(
+                breedDetails: [
+                    BreedDetails.stub(),
+                    BreedDetails.stub(),
+                    BreedDetails.stub(),
+                ],
+                catImages: [
+                    CatModel(
+                        id: "beng",
+                        width: 1000,
+                        height: 1000,
+                        url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,
+                        breeds: []
+                    )
+                ]
+            )
+        )
+    )
+    .environmentObject(ImageLoader(cacheManager: CacheManager()))
 }
