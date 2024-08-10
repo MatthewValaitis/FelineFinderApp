@@ -19,8 +19,15 @@ struct CatAPIClient: APIClient {
         case breeds
     }
     
-    let baseURL: String = "https://api.thecatapi.com/v1"
-    let apiKey: String = "live_KhlFAA2evvNGOAN963yWgZWCNJTYIxpAZbb88GeqTFcrUSYn23yNMlUYLDxws73S"
+    let baseURL: String
+    let apiKey: String
+    
+    init(baseURL: String = "https://api.thecatapi.com/v1",
+         apiKey: String = "live_KhlFAA2evvNGOAN963yWgZWCNJTYIxpAZbb88GeqTFcrUSYn23yNMlUYLDxws73S"
+    ) {
+        self.baseURL = baseURL
+        self.apiKey = apiKey
+    }
     
     
     func makeURL(path: Path, limit: Int = 20, breed: String? = nil) throws -> URL {

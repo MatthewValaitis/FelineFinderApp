@@ -29,6 +29,7 @@ class CatViewModel: ObservableObject {
     @MainActor
     //TODO: View state is loading, fetched, error (ContentUnavailble)
     func setCatImages(for breed: BreedDetails) async {
+        guard state != .loaded else { return }
         do {
             state = .loading
             catImages = try await apiClient.fetchCatImages(breedID: breed.id)

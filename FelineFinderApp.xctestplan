@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "9368AACE-F0ED-4A67-97B2-6CF0E0997F65",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FelineFinderApp.xcodeproj",
+      "identifier" : "5C9D15FC2C6743790032C177",
+      "name" : "FelineFinderApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:FelineFinderApp.xcodeproj",
+        "identifier" : "5C9D163D2C677D7A0032C177",
+        "name" : "FelineFinderAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

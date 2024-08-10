@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5C9D16012C6743790032C177 /* FelineFinderAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16002C6743790032C177 /* FelineFinderAppApp.swift */; };
-		5C9D16032C6743790032C177 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16022C6743790032C177 /* ContentView.swift */; };
 		5C9D16052C67437B0032C177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9D16042C67437B0032C177 /* Assets.xcassets */; };
 		5C9D16082C67437B0032C177 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9D16072C67437B0032C177 /* Preview Assets.xcassets */; };
 		5C9D16122C6744630032C177 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16112C6744630032C177 /* APIModels.swift */; };
@@ -21,12 +20,25 @@
 		5C9D16262C6764140032C177 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16252C6764140032C177 /* CacheManager.swift */; };
 		5C9D16282C6765160032C177 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16272C6765160032C177 /* ImageLoader.swift */; };
 		5C9D162A2C6766430032C177 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16292C6766430032C177 /* CachedAsyncImage.swift */; };
+		5C9D162E2C6777990032C177 /* ExpandedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D162D2C6777990032C177 /* ExpandedImageView.swift */; };
+		5C9D16412C677D7A0032C177 /* FelineFinderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */; };
+		5C9D16492C677D8E0032C177 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16472C677D8B0032C177 /* MockAPIClient.swift */; };
+		5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C9D16422C677D7A0032C177 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C9D15F52C6743790032C177 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C9D15FC2C6743790032C177;
+			remoteInfo = FelineFinderApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C9D15FD2C6743790032C177 /* FelineFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FelineFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9D16002C6743790032C177 /* FelineFinderAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineFinderAppApp.swift; sourceTree = "<group>"; };
-		5C9D16022C6743790032C177 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C9D16042C67437B0032C177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9D16072C67437B0032C177 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C9D16112C6744630032C177 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
@@ -39,10 +51,23 @@
 		5C9D16252C6764140032C177 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		5C9D16272C6765160032C177 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5C9D16292C6766430032C177 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		5C9D162D2C6777990032C177 /* ExpandedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedImageView.swift; sourceTree = "<group>"; };
+		5C9D163E2C677D7A0032C177 /* FelineFinderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FelineFinderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineFinderAppTests.swift; sourceTree = "<group>"; };
+		5C9D16472C677D8B0032C177 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		5C9D164A2C6782330032C177 /* FelineFinderApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FelineFinderApp.xctestplan; sourceTree = "<group>"; };
+		5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5C9D15FA2C6743790032C177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9D163B2C677D7A0032C177 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,7 +80,9 @@
 		5C9D15F42C6743790032C177 = {
 			isa = PBXGroup;
 			children = (
+				5C9D164A2C6782330032C177 /* FelineFinderApp.xctestplan */,
 				5C9D15FF2C6743790032C177 /* FelineFinderApp */,
+				5C9D163F2C677D7A0032C177 /* FelineFinderAppTests */,
 				5C9D15FE2C6743790032C177 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9D15FD2C6743790032C177 /* FelineFinderApp.app */,
+				5C9D163E2C677D7A0032C177 /* FelineFinderAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,7 +104,6 @@
 				5C9D16182C67513B0032C177 /* Views */,
 				5C9D16152C674B7A0032C177 /* ViewModels */,
 				5C9D16002C6743790032C177 /* FelineFinderAppApp.swift */,
-				5C9D16022C6743790032C177 /* ContentView.swift */,
 				5C9D16102C67441F0032C177 /* Models */,
 				5C9D160E2C6743F30032C177 /* Services */,
 				5C9D16042C67437B0032C177 /* Assets.xcassets */,
@@ -122,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9D16222C675F640032C177 /* CatGalleryView.swift */,
+				5C9D162D2C6777990032C177 /* ExpandedImageView.swift */,
 				5C9D16292C6766430032C177 /* CachedAsyncImage.swift */,
 			);
 			path = Views;
@@ -145,6 +173,16 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5C9D163F2C677D7A0032C177 /* FelineFinderAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */,
+				5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */,
+				5C9D16472C677D8B0032C177 /* MockAPIClient.swift */,
+			);
+			path = FelineFinderAppTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +203,24 @@
 			productReference = 5C9D15FD2C6743790032C177 /* FelineFinderApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5C9D163D2C677D7A0032C177 /* FelineFinderAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9D16462C677D7A0032C177 /* Build configuration list for PBXNativeTarget "FelineFinderAppTests" */;
+			buildPhases = (
+				5C9D163A2C677D7A0032C177 /* Sources */,
+				5C9D163B2C677D7A0032C177 /* Frameworks */,
+				5C9D163C2C677D7A0032C177 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C9D16432C677D7A0032C177 /* PBXTargetDependency */,
+			);
+			name = FelineFinderAppTests;
+			productName = FelineFinderAppTests;
+			productReference = 5C9D163E2C677D7A0032C177 /* FelineFinderAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +233,10 @@
 				TargetAttributes = {
 					5C9D15FC2C6743790032C177 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					5C9D163D2C677D7A0032C177 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5C9D15FC2C6743790032C177;
 					};
 				};
 			};
@@ -194,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				5C9D15FC2C6743790032C177 /* FelineFinderApp */,
+				5C9D163D2C677D7A0032C177 /* FelineFinderAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +269,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C9D163C2C677D7A0032C177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -218,8 +286,8 @@
 				5C9D16232C675F640032C177 /* CatGalleryView.swift in Sources */,
 				5C9D16122C6744630032C177 /* APIModels.swift in Sources */,
 				5C9D161D2C67557D0032C177 /* BreedSelectionViewModel.swift in Sources */,
-				5C9D16032C6743790032C177 /* ContentView.swift in Sources */,
 				5C9D16142C6747050032C177 /* CatAPIClient.swift in Sources */,
+				5C9D162E2C6777990032C177 /* ExpandedImageView.swift in Sources */,
 				5C9D16282C6765160032C177 /* ImageLoader.swift in Sources */,
 				5C9D16172C674E2E0032C177 /* CatViewModel.swift in Sources */,
 				5C9D16262C6764140032C177 /* CacheManager.swift in Sources */,
@@ -230,7 +298,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C9D163A2C677D7A0032C177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */,
+				5C9D16412C677D7A0032C177 /* FelineFinderAppTests.swift in Sources */,
+				5C9D16492C677D8E0032C177 /* MockAPIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C9D16432C677D7A0032C177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C9D15FC2C6743790032C177 /* FelineFinderApp */;
+			targetProxy = 5C9D16422C677D7A0032C177 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5C9D16092C67437B0032C177 /* Debug */ = {
@@ -410,6 +496,42 @@
 			};
 			name = Release;
 		};
+		5C9D16442C677D7A0032C177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WCRC64K5S6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewvalaitis.FelineFinderAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FelineFinderApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FelineFinderApp";
+			};
+			name = Debug;
+		};
+		5C9D16452C677D7A0032C177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WCRC64K5S6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matthewvalaitis.FelineFinderAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FelineFinderApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FelineFinderApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -427,6 +549,15 @@
 			buildConfigurations = (
 				5C9D160C2C67437B0032C177 /* Debug */,
 				5C9D160D2C67437B0032C177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C9D16462C677D7A0032C177 /* Build configuration list for PBXNativeTarget "FelineFinderAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9D16442C677D7A0032C177 /* Debug */,
+				5C9D16452C677D7A0032C177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
