@@ -1,5 +1,5 @@
 //
-//  CatViewModel.swift
+//  BreedDetailViewModel.swift
 //  FelineFinderApp
 //
 //  Created by Matthew Valaitis on 10/08/2024.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @Observable
-class CatViewModel: ObservableObject {
+class BreedDetailViewModel: ObservableObject {
     
     enum ViewState {
         case loading

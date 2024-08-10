@@ -27,14 +27,18 @@ struct ExpandedImageView: View {
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .font(.system(size: 24))
-                    .foregroundColor(.black)
+                    .foregroundColor(ColorPalette.sunset)
                     .padding()
             }
 
         }
+        .onTapGesture {
+            dismiss()
+        }
     }
 }
 
-//#Preview {
-//    ExpandedImageView(catModel: CatModel, breedDetails: )
-//}
+#Preview {
+    ExpandedImageView(url: URL(string: "https://api.thecatapi.com/v1/images/search")!)
+        .environmentObject(ImageLoader(cacheManager: CacheManager()))
+}

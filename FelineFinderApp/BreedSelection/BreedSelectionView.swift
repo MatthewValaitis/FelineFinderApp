@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct BreedSelectionView: View {
-    
+
     @State var viewModel: BreedSelectionViewModel
-    
+
     var body: some View {
         NavigationStack {
             Group {
@@ -25,9 +25,9 @@ struct BreedSelectionView: View {
                         .foregroundColor(.red)
                 }
             }
-            .navigationTitle("Cat Breeds 🐾")
+            .navigationTitle("Cat Breeds")
             .navigationDestination(for: BreedDetails.self) { breed in
-                CatGalleryView(viewModel: CatViewModel(apiClient: viewModel.apiClient), breedDetails: breed)
+                BreedDetailsView(viewModel: BreedDetailViewModel(apiClient: viewModel.apiClient), breedDetails: breed)
             }
             .onAppear {
                 Task {
@@ -37,24 +37,31 @@ struct BreedSelectionView: View {
             .searchable(text: $viewModel.searchText, prompt: "Search Breeds")
         }
     }
-    
+
     var breedList: some View {
-            List {
-                ForEach(viewModel.filteredBreeds(), id: \.self) { breed in
-                    NavigationLink(value: breed) {
-                        VStack(alignment: .leading) {
-                            Text(breed.name)
-                            
-                            Text("\(breed.origin) | \(breed.lifeSpan)")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
+        List {
+            ForEach(viewModel.filteredBreeds(), id: \.self) { breed in
+                NavigationLink(value: breed) {
+                    VStack(alignment: .leading) {
+                        Text(breed.name)
+                            .fontWeight(.heavy)
+                            .bold()
+
+                        Text("\(breed.origin)")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 3)
+                            .background(Capsule().fill(ColorPalette.blush))
                     }
+                    .padding(.vertical, 5)
                 }
             }
+        }
     }
 }
 
 #Preview {
     BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatAPIClient()))
+        .environmentObject(ImageLoader(cacheManager: CacheManager()))
 }

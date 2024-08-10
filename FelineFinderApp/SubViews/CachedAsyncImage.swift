@@ -24,6 +24,7 @@ struct CachedAsyncImage: View {
             } else {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.gray)
                     .onAppear {
                         Task {
                             self.image = await imageLoader.getImage(for: url)
