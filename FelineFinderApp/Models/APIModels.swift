@@ -10,7 +10,7 @@ import Foundation
 
 // Struct used for getting Images via url
 
-struct CatModel: Decodable {
+struct CatModel: Decodable, Identifiable {
     
     let id: String
     let width: Int

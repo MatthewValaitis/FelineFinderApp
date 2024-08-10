@@ -11,9 +11,6 @@ struct BreedSelectionView: View {
     
     @State var viewModel: BreedSelectionViewModel
     
-    let columns = [
-        GridItem(.flexible(), spacing: 16)]
-    
     var body: some View {
         NavigationStack {
             Group {
@@ -30,7 +27,7 @@ struct BreedSelectionView: View {
             }
             .navigationTitle("Cat Breeds")
             .navigationDestination(for: BreedDetails.self) { breed in
-                Text(breed.name)
+                CatGalleryView(viewModel: CatViewModel(apiClient: viewModel.apiClient), breedDetails: breed)
             }
             .onAppear {
                 Task {
