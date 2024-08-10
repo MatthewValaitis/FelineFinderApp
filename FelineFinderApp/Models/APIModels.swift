@@ -10,8 +10,8 @@ import Foundation
 
 // Struct used for getting Images via url
 
-struct CatModel: Decodable, Identifiable, Hashable {
-    
+struct CatImage: Decodable, Identifiable, Hashable {
+
     let id: String
     let width: Int
     let height: Int
@@ -29,7 +29,7 @@ struct BreedDetails: Decodable, Hashable {
     let origin: String
     let temperament: String
     let lifeSpan: String
-    let wikipediaURL: String
+    let wikipediaURL: String?
     let affectionLevel: Int
     let energyLevel: Int
     let dogFriendlyLevel: Int

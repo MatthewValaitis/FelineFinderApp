@@ -10,12 +10,12 @@ import Foundation
 struct MockAPIClient: APIClient {
     
     let breedDetails: [BreedDetails]
-    let catImages: [CatModel]
+    let catImages: [CatImage]
     let alwaysError: Bool
     
     init(
         breedDetails: [BreedDetails] = [],
-        catImages: [CatModel] = [],
+        catImages: [CatImage] = [],
         alwaysError: Bool = false
     ) {
         self.breedDetails = breedDetails
@@ -30,7 +30,7 @@ struct MockAPIClient: APIClient {
         return breedDetails
     }
     
-    func fetchCatImages(breedID: String) async throws -> [CatModel] {
+    func fetchCatImages(breedID: String) async throws -> [CatImage] {
         if alwaysError {
             throw URLError(.notConnectedToInternet)
         }

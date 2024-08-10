@@ -21,7 +21,7 @@ class BreedDetailViewModel: ObservableObject {
     
     let apiClient: APIClient
     
-    var catImages: [CatModel] = []
+    var catImages: [CatImage] = []
     
     init(apiClient: APIClient) {
         self.apiClient = apiClient

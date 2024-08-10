@@ -30,13 +30,13 @@ struct CatAPIClient: APIClient {
     }
     
     
-    func makeURL(path: Path, limit: Int = 20, breed: String? = nil) throws -> URL {
+    func makeURL(path: Path, limit: Int = 100, breed: String? = nil) throws -> URL {
         guard var url = URL(string: baseURL) else {
             throw APIClientError.failedToCreateURL
         }
         url.append(path: path.rawValue)
         
-        var queryItems = [
+        let queryItems = [
             URLQueryItem(name: "limit", value: String(limit)),
             URLQueryItem(name: "api_key", value: apiKey),
         ]
@@ -46,7 +46,7 @@ struct CatAPIClient: APIClient {
         return url
     }
     
-    func fetchCatImages(breedID: String) async throws -> [CatModel] {
+    func fetchCatImages(breedID: String) async throws -> [CatImage] {
         var url = try makeURL(path: Path.images)
         
         url.append(queryItems: [
@@ -55,7 +55,7 @@ struct CatAPIClient: APIClient {
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
-        let catImages = try JSONDecoder().decode([CatModel].self, from: data)
+        let catImages = try JSONDecoder().decode([CatImage].self, from: data)
         return catImages
     }
     
@@ -63,7 +63,7 @@ struct CatAPIClient: APIClient {
         let url = try makeURL(path: Path.breeds)
         let (data, _) = try await URLSession.shared.data(from: url)
         let breedDetails = try JSONDecoder().decode([BreedDetails].self, from: data)
-        
+
         return breedDetails
     }
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct BreedDetailsView: View {
-    
+
     @State var viewModel: BreedDetailViewModel
-    @State var selectedImage: CatModel?
+    @State var selectedImage: CatImage?
     
     let breedDetails: BreedDetails
     
@@ -20,6 +20,7 @@ struct BreedDetailsView: View {
                 case .loading:
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .foregroundColor(.white)
                 case .loaded:
                     breedDetailsView
                 case .error:
@@ -36,7 +37,8 @@ struct BreedDetailsView: View {
             )
             .background(
                 ColorPalette.offWhite
-                    .ignoresSafeArea())
+                    .ignoresSafeArea()
+            )
             .onAppear {
                 Task {
                     await viewModel.setCatImages(for: breedDetails)
@@ -121,7 +123,7 @@ struct BreedDetailsView: View {
                 .frame(height: 320)
                 .padding(.leading)
             }
-            .navigationDestination(for: CatModel.self, destination: { catImage in
+            .navigationDestination(for: CatImage.self, destination: { catImage in
                 ExpandedImageView(url: catImage.url)
             })
             .scrollIndicators(.hidden)
@@ -131,7 +133,7 @@ struct BreedDetailsView: View {
         }
     }
     
-    func catImageView(_ catImage: CatModel) -> some View {
+    func catImageView(_ catImage: CatImage) -> some View {
         NavigationLink(value: catImage) {
             CachedAsyncImage(url: catImage.url)
                 .aspectRatio(contentMode: .fill)
@@ -147,48 +149,53 @@ struct BreedDetailsView: View {
     }
     
     var breedDetailsView: some View {
-        VStack(spacing: 0) {
-            imageGalleryView
+        ScrollView {
+            VStack(spacing: 0) {
+                imageGalleryView
 
-            detailsTextView
+                detailsTextView
+            }
         }
     }
 }
 
 #Preview {
-    BreedDetailsView(
-        viewModel: BreedDetailViewModel(
-            apiClient: MockAPIClient(
-                catImages: [
-                    CatModel(
-                        id: "beng",
-                        width: 1000,
-                        height: 1000,
-                        url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,
-                        breeds: []
-                    ),
-                    CatModel(
-                        id: "beng2",
-                        width: 1000,
-                        height: 1000,
-                        url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,
-                        breeds: []
-                    )
-                ]
+    NavigationStack {
+
+        BreedDetailsView(
+            viewModel: BreedDetailViewModel(
+                apiClient: MockAPIClient(
+                    catImages: [
+                        CatImage(
+                            id: "beng",
+                            width: 1000,
+                            height: 1000,
+                            url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,
+                            breeds: []
+                        ),
+                        CatImage(
+                            id: "beng2",
+                            width: 1000,
+                            height: 1000,
+                            url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,
+                            breeds: []
+                        )
+                    ]
+                )
+            ),
+            breedDetails: BreedDetails.stub(
+                id: "beng",
+                name: "Bengal",
+                description: "A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat",
+                origin: "Portugal",
+                temperament: "Alert, Agile, Energetic, Demanding, Intelligent",
+                lifeSpan: "0-100",
+                wikipediaURL: "",
+                affectionLevel: 3,
+                energyLevel: 2,
+                dogFriendlyLevel: 4
             )
-        ),
-        breedDetails: BreedDetails.stub(
-            id: "beng",
-            name: "Bengal",
-            description: "A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat A cat",
-            origin: "Portugal",
-            temperament: "Alert, Agile, Energetic, Demanding, Intelligent",
-            lifeSpan: "0-100",
-            wikipediaURL: "",
-            affectionLevel: 3,
-            energyLevel: 2,
-            dogFriendlyLevel: 4
         )
-    )
-    .environmentObject(ImageLoader(cacheManager: CacheManager()))
+        .environmentObject(ImageLoader(cacheManager: CacheManager()))
+    }
 }

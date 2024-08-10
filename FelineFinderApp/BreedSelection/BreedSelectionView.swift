@@ -71,7 +71,7 @@ struct BreedSelectionView: View {
                     BreedDetails.stub(),
                 ],
                 catImages: [
-                    CatModel(
+                    CatImage(
                         id: "beng",
                         width: 1000,
                         height: 1000,

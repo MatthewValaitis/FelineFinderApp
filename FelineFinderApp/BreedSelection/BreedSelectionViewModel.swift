@@ -35,7 +35,7 @@ final class BreedSelectionViewModel {
             breeds = try await apiClient.fetchBreedData()
             state = .loaded
         } catch {
-            print("Could not fetch breeds")
+            print("Could not fetch breeds", error)
             state = .error
         }
     }
