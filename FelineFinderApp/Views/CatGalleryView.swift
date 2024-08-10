@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CatGalleryView: View {
     
+    @StateObject private var imageLoader = ImageLoader(cacheManager: CacheManager())
+    
     @State var viewModel: CatViewModel
     
     let breedDetails: BreedDetails
@@ -24,10 +26,11 @@ struct CatGalleryView: View {
                 LazyHStack(spacing: 16) {
                     ForEach(viewModel.catImages) { catImage in
                         HStack {
-                            AsyncImage(url: catImage.url)
+                            CachedAsyncImage(url: catImage.url)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 200, height: 200)
                                 .cornerRadius(8.0)
+                                .environmentObject(imageLoader)
                         }
                     }
                 }
