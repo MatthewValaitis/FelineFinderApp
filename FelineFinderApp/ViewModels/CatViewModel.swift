@@ -10,11 +10,19 @@ import Foundation
 @Observable
 class CatViewModel: ObservableObject {
     
-    let apiClient: CatApiClient
+    enum ViewState {
+        case loading
+        case loaded
+        case error
+    }
+    
+    private(set) var state: ViewState = .loading
+    
+    let apiClient: APIClient
     
     var catImages: [CatModel] = []
     
-    init(apiClient: CatApiClient) {
+    init(apiClient: APIClient) {
         self.apiClient = apiClient
     }
     
@@ -22,9 +30,12 @@ class CatViewModel: ObservableObject {
     //TODO: View state is loading, fetched, error (ContentUnavailble)
     func setCatImages(for breed: BreedDetails) async {
         do {
+            state = .loading
             catImages = try await apiClient.fetchCatImages(breedID: breed.id)
+            state = .loaded
         } catch {
             print("Error: \(error)")
+            state = .error
         }
     }
 }

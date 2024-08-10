@@ -15,21 +15,43 @@ struct BreedSelectionView: View {
         GridItem(.flexible(), spacing: 16)]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(viewModel.breeds, id: \.self) { breed in
-                    Text(breed.name)
+        NavigationStack {
+            Group {
+                switch viewModel.state {
+                case .loading:
+                    ProgressView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                case .loaded:
+                    breedList
+                case .error:
+                    ContentUnavailableView("Error Fetching Breeds", systemImage: "xmark")
+                        .foregroundColor(.red)
+                }
+            }
+            .navigationTitle("Cat Breeds")
+            .navigationDestination(for: BreedDetails.self) { breed in
+                Text(breed.name)
+            }
+            .onAppear {
+                Task {
+                    await viewModel.setBreeds()
                 }
             }
         }
-        .onAppear {
-            Task {
-                await viewModel.setBreeds()
+    }
+    
+    var breedList: some View {
+            List {
+                ForEach(viewModel.breeds, id: \.self) { breed in
+                    NavigationLink(value: breed) {
+                        Text(breed.name)
+                            .foregroundColor(.black)
+                    }
+                }
             }
-        }
     }
 }
 
 #Preview {
-    BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatApiClient()))
+    BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatAPIClient()))
 }

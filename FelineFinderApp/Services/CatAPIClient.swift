@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct CatApiClient {
+struct CatAPIClient: APIClient {
     
     enum APIClientError: Error {
         case failedToCreateURL

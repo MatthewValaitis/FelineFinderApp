@@ -11,7 +11,7 @@ import SwiftUI
 struct FelineFinderAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatAPIClient()))
         }
     }
 }
