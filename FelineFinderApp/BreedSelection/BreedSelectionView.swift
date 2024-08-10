@@ -55,6 +55,7 @@ struct BreedSelectionView: View {
                 }
                 .foregroundColor(.white)
                 .listRowBackground(ColorPalette.blush)
+                .listRowSeparatorTint(.white)
             }
         }
     }
