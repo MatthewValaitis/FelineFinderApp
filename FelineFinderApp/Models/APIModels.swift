@@ -21,7 +21,7 @@ struct CatModel: Decodable {
 
 // nested values needed for breeds array
 
-struct BreedDetails: Decodable {
+struct BreedDetails: Decodable, Hashable {
     
     let id: String
     let name: String

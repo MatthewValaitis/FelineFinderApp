@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class CatViewModel: ObservableObject {
     
     let apiClient: CatApiClient
@@ -17,9 +18,11 @@ class CatViewModel: ObservableObject {
         self.apiClient = apiClient
     }
     
-    func setCatImages() async {
+    @MainActor
+    //TODO: View state is loading, fetched, error (ContentUnavailble)
+    func setCatImages(for breed: BreedDetails) async {
         do {
-            catImages = try await apiClient.fetchCatImages()
+            catImages = try await apiClient.fetchCatImages(breedID: breed.id)
         } catch {
             print("Error: \(error)")
         }

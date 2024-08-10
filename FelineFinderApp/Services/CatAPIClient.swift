@@ -16,20 +16,22 @@ struct CatApiClient {
     
     enum Path: String {
         case images = "images/search"
+        case breeds
     }
     
     let baseURL: String = "https://api.thecatapi.com/v1"
     let apiKey: String = "live_KhlFAA2evvNGOAN963yWgZWCNJTYIxpAZbb88GeqTFcrUSYn23yNMlUYLDxws73S"
     
     
-    func makeURL(path: Path, limit: Int = 20) throws -> URL {
+    func makeURL(path: Path, limit: Int = 20, breed: String? = nil) throws -> URL {
         guard var url = URL(string: baseURL) else {
             throw APIClientError.failedToCreateURL
         }
         url.append(path: path.rawValue)
         
         var queryItems = [
-            URLQueryItem(name: "limit", value: String(limit))
+            URLQueryItem(name: "limit", value: String(limit)),
+            URLQueryItem(name: "api_key", value: apiKey),
         ]
         
         url.append(queryItems: queryItems)
@@ -37,12 +39,24 @@ struct CatApiClient {
         return url
     }
     
-    func fetchCatImages() async throws -> [CatModel] {
+    func fetchCatImages(breedID: String) async throws -> [CatModel] {
         var url = try makeURL(path: Path.images)
+        
+        url.append(queryItems: [
+            URLQueryItem(name: "breed_ids", value: breedID)
+        ])
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
         let catImages = try JSONDecoder().decode([CatModel].self, from: data)
         return catImages
+    }
+    
+    func fetchBreedData() async throws -> [BreedDetails] {
+        let url = try makeURL(path: Path.breeds)
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let breedDetails = try JSONDecoder().decode([BreedDetails].self, from: data)
+        
+        return breedDetails
     }
 }
