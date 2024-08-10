@@ -23,6 +23,7 @@ struct CachedAsyncImage: View {
                     .resizable()
             } else {
                 ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .onAppear {
                         Task {
                             self.image = await imageLoader.getImage(for: url)

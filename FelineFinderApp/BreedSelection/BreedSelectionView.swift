@@ -25,7 +25,7 @@ struct BreedSelectionView: View {
                         .foregroundColor(.red)
                 }
             }
-            .navigationTitle("Cat Breeds")
+            .navigationTitle("Cat Breeds 🐾")
             .navigationDestination(for: BreedDetails.self) { breed in
                 CatGalleryView(viewModel: CatViewModel(apiClient: viewModel.apiClient), breedDetails: breed)
             }
@@ -42,7 +42,13 @@ struct BreedSelectionView: View {
             List {
                 ForEach(viewModel.filteredBreeds(), id: \.self) { breed in
                     NavigationLink(value: breed) {
-                        Text(breed.name)
+                        VStack(alignment: .leading) {
+                            Text(breed.name)
+                            
+                            Text("\(breed.origin) | \(breed.lifeSpan)")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
             }

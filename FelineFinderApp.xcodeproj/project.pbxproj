@@ -22,8 +22,9 @@
 		5C9D162A2C6766430032C177 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16292C6766430032C177 /* CachedAsyncImage.swift */; };
 		5C9D162E2C6777990032C177 /* ExpandedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D162D2C6777990032C177 /* ExpandedImageView.swift */; };
 		5C9D16412C677D7A0032C177 /* FelineFinderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */; };
-		5C9D16492C677D8E0032C177 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16472C677D8B0032C177 /* MockAPIClient.swift */; };
 		5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */; };
+		5CE7F3832C679C1800F2B9DC /* BreedDetail+stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */; };
+		5CF5AAB62C67AC4D00678880 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16472C677D8B0032C177 /* MockAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		5C9D16472C677D8B0032C177 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		5C9D164A2C6782330032C177 /* FelineFinderApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FelineFinderApp.xctestplan; sourceTree = "<group>"; };
 		5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreedDetail+stub.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		5C9D160E2C6743F30032C177 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5C9D16472C677D8B0032C177 /* MockAPIClient.swift */,
 				5C9D16132C6747050032C177 /* CatAPIClient.swift */,
 				5C9D16202C67585C0032C177 /* ApiClient.swift */,
 			);
@@ -133,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5C9D16112C6744630032C177 /* APIModels.swift */,
+				5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,7 +182,6 @@
 			children = (
 				5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */,
 				5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */,
-				5C9D16472C677D8B0032C177 /* MockAPIClient.swift */,
 			);
 			path = FelineFinderAppTests;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				5C9D16232C675F640032C177 /* CatGalleryView.swift in Sources */,
 				5C9D16122C6744630032C177 /* APIModels.swift in Sources */,
 				5C9D161D2C67557D0032C177 /* BreedSelectionViewModel.swift in Sources */,
+				5CF5AAB62C67AC4D00678880 /* MockAPIClient.swift in Sources */,
 				5C9D16142C6747050032C177 /* CatAPIClient.swift in Sources */,
 				5C9D162E2C6777990032C177 /* ExpandedImageView.swift in Sources */,
 				5C9D16282C6765160032C177 /* ImageLoader.swift in Sources */,
@@ -295,6 +299,7 @@
 				5C9D161F2C6756430032C177 /* BreedSelectionView.swift in Sources */,
 				5C9D162A2C6766430032C177 /* CachedAsyncImage.swift in Sources */,
 				5C9D16212C67585C0032C177 /* ApiClient.swift in Sources */,
+				5CE7F3832C679C1800F2B9DC /* BreedDetail+stub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +309,6 @@
 			files = (
 				5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */,
 				5C9D16412C677D7A0032C177 /* FelineFinderAppTests.swift in Sources */,
-				5C9D16492C677D8E0032C177 /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,9 @@ struct BreedDetails: Decodable, Hashable {
     let temperament: String
     let lifeSpan: String
     let wikipediaURL: String
+    let affectionLevel: Int
+    let energyLevel: Int
+    let dogFriendlyLevel: Int
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -39,5 +42,8 @@ struct BreedDetails: Decodable, Hashable {
         case temperament
         case lifeSpan = "life_span"
         case wikipediaURL = "wikipedia_url"
+        case affectionLevel = "affection_level"
+        case energyLevel = "energy_level"
+        case dogFriendlyLevel = "dog_friendly"
     }
 }

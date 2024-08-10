@@ -6,7 +6,6 @@
 //
 
 import Foundation
-@testable import FelineFinderApp
 
 struct MockAPIClient: APIClient {
     

@@ -70,27 +70,3 @@ final class FelineFinderAppTests: XCTestCase {
         
     }
 }
-
-// MARK: Breed Details Stub
-
-extension BreedDetails {
-    
-    static func stub(
-        id: String = UUID().uuidString,
-        name: String = "Bengal",
-        description: String = "A Cat",
-        origin: String = "Portugal",
-        temperament: String = "Nice",
-        lifeSpan: String = "0 - 100",
-        wikipediaURL: String = "URL"
-    ) -> BreedDetails {
-        BreedDetails(
-            id: id,
-            name: name,
-            description: description,
-            origin: origin,
-            temperament: temperament,
-            lifeSpan: lifeSpan,
-            wikipediaURL: wikipediaURL)
-    }
-}
