@@ -1,0 +1,12 @@
+{
+  "source": "/Users/matthewvalaitis/Developer/FelineFinderApp/FelineFinderApp/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Hello, world!"
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,59 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "7a392fe2521d17d820b69062d4e8ebc8228d71ebc851a9622bbbafff200bcc49"
+    }
+  ],
+  "containerPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/FelineFinderApp.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator17.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Build/Products",
+      "pchPath" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
