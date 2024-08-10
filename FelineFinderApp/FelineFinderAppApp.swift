@@ -16,6 +16,7 @@ struct FelineFinderAppApp: App {
         WindowGroup {
             BreedSelectionView(viewModel: BreedSelectionViewModel(apiClient: CatAPIClient()))
                 .environmentObject(imageLoader)
+                .tint(ColorPalette.blush)
         }
     }
 }

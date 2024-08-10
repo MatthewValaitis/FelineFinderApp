@@ -25,7 +25,6 @@ struct BreedSelectionView: View {
                         .foregroundColor(.red)
                 }
             }
-
             .navigationTitle("Cat Breeds")
             .navigationDestination(for: BreedDetails.self) { breed in
                 BreedDetailsView(viewModel: BreedDetailViewModel(apiClient: viewModel.apiClient), breedDetails: breed)
@@ -52,13 +51,12 @@ struct BreedSelectionView: View {
                             .font(.subheadline)
                             .padding(.vertical, 3)
                     }
-                    .foregroundColor(.white)
                     .padding(.vertical, 5)
                 }
+                .foregroundColor(.white)
                 .listRowBackground(ColorPalette.blush)
             }
         }
-
     }
 }
 
@@ -84,4 +82,5 @@ struct BreedSelectionView: View {
         )
     )
     .environmentObject(ImageLoader(cacheManager: CacheManager()))
+    .tint(ColorPalette.blush)
 }

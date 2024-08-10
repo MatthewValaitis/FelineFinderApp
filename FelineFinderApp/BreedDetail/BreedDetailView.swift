@@ -9,8 +9,6 @@ import SwiftUI
 
 struct BreedDetailsView: View {
     
-    @StateObject private var imageLoader = ImageLoader(cacheManager: CacheManager())
-    
     @State var viewModel: BreedDetailViewModel
     @State var selectedImage: CatModel?
     
@@ -64,6 +62,7 @@ struct BreedDetailsView: View {
             }
             .padding()
             .frame(maxHeight: .infinity)
+
             ratingView
                 .padding(.bottom, 50)
                 .offset(x: 30)
