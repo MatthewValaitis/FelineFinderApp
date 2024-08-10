@@ -1,0 +1,18 @@
+{
+  "" : {
+    "dependencies" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/FelineFinderApp.build/Debug-iphonesimulator/FelineFinderApp.build/Objects-normal/arm64/FelineFinderApp-master.d",
+    "diagnostics" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/FelineFinderApp.build/Debug-iphonesimulator/FelineFinderApp.build/Objects-normal/arm64/FelineFinderApp-master.dia",
+    "emit-module-dependencies" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/FelineFinderApp.build/Debug-iphonesimulator/FelineFinderApp.build/Objects-normal/arm64/FelineFinderApp-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/FelineFinderApp.build/Debug-iphonesimulator/FelineFinderApp.build/Objects-normal/arm64/FelineFinderApp-master-emit-module.dia",
+    "swift-dependencies" : "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/FelineFinderApp.build/Debug-iphonesimulator/FelineFinderApp.build/Objects-normal/arm64/FelineFinderApp-master.swiftdeps"
+  },
+  "/Users/matthewvalaitis/Developer/FelineFinderApp/DerivedData/FelineFinderApp/Index.noindex/Build/Intermediates.noindex/FelineFinderApp.build/Debug-iphonesimulator/FelineFinderApp.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+
+  },
+  "/Users/matthewvalaitis/Developer/FelineFinderApp/FelineFinderApp/ContentView.swift" : {
+
+  },
+  "/Users/matthewvalaitis/Developer/FelineFinderApp/FelineFinderApp/FelineFinderAppApp.swift" : {
+
+  }
+}
