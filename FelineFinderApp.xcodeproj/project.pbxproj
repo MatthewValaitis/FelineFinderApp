@@ -12,6 +12,8 @@
 		5C9D16052C67437B0032C177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9D16042C67437B0032C177 /* Assets.xcassets */; };
 		5C9D16082C67437B0032C177 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C9D16072C67437B0032C177 /* Preview Assets.xcassets */; };
 		5C9D16122C6744630032C177 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16112C6744630032C177 /* APIModels.swift */; };
+		5C9D16142C6747050032C177 /* CatAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16132C6747050032C177 /* CatAPIClient.swift */; };
+		5C9D16172C674E2E0032C177 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16162C674E2E0032C177 /* CatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		5C9D16042C67437B0032C177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C9D16072C67437B0032C177 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C9D16112C6744630032C177 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		5C9D16132C6747050032C177 /* CatAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIClient.swift; sourceTree = "<group>"; };
+		5C9D16162C674E2E0032C177 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		5C9D15FF2C6743790032C177 /* FelineFinderApp */ = {
 			isa = PBXGroup;
 			children = (
+				5C9D16152C674B7A0032C177 /* ViewModels */,
 				5C9D16002C6743790032C177 /* FelineFinderAppApp.swift */,
 				5C9D16022C6743790032C177 /* ContentView.swift */,
 				5C9D16102C67441F0032C177 /* Models */,
@@ -74,6 +79,7 @@
 		5C9D160E2C6743F30032C177 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5C9D16132C6747050032C177 /* CatAPIClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -84,6 +90,14 @@
 				5C9D16112C6744630032C177 /* APIModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5C9D16152C674B7A0032C177 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C9D16162C674E2E0032C177 /* CatViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +172,8 @@
 			files = (
 				5C9D16122C6744630032C177 /* APIModels.swift in Sources */,
 				5C9D16032C6743790032C177 /* ContentView.swift in Sources */,
+				5C9D16142C6747050032C177 /* CatAPIClient.swift in Sources */,
+				5C9D16172C674E2E0032C177 /* CatViewModel.swift in Sources */,
 				5C9D16012C6743790032C177 /* FelineFinderAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
