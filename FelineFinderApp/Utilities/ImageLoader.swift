@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-//TODO: Maybe make a protocol
+// TODO: Make a protocol
 final class ImageLoader: ObservableObject {
     
     let cacheManager: CacheManager

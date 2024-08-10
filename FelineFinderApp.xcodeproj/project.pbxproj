@@ -25,6 +25,7 @@
 		5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */; };
 		5CE7F3832C679C1800F2B9DC /* BreedDetail+stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */; };
 		5CF5AAB62C67AC4D00678880 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16472C677D8B0032C177 /* MockAPIClient.swift */; };
+		EC0355302C67D2EB00A49DC2 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03552F2C67D2EB00A49DC2 /* ColorPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		5C9D164A2C6782330032C177 /* FelineFinderApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FelineFinderApp.xctestplan; sourceTree = "<group>"; };
 		5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreedDetail+stub.swift"; sourceTree = "<group>"; };
+		EC03552F2C67D2EB00A49DC2 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				5C9D16222C675F640032C177 /* CatGalleryView.swift */,
 				5C9D162D2C6777990032C177 /* ExpandedImageView.swift */,
 				5C9D16292C6766430032C177 /* CachedAsyncImage.swift */,
+				EC03552F2C67D2EB00A49DC2 /* ColorPalette.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				5C9D161D2C67557D0032C177 /* BreedSelectionViewModel.swift in Sources */,
 				5CF5AAB62C67AC4D00678880 /* MockAPIClient.swift in Sources */,
 				5C9D16142C6747050032C177 /* CatAPIClient.swift in Sources */,
+				EC0355302C67D2EB00A49DC2 /* ColorPalette.swift in Sources */,
 				5C9D162E2C6777990032C177 /* ExpandedImageView.swift in Sources */,
 				5C9D16282C6765160032C177 /* ImageLoader.swift in Sources */,
 				5C9D16172C674E2E0032C177 /* CatViewModel.swift in Sources */,
@@ -375,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -432,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -465,6 +469,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewvalaitis.FelineFinderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,6 +502,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewvalaitis.FelineFinderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

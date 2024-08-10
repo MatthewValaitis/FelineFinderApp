@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum ColorPalette {
-    static let baige = Color(uiColor: UIColor(red: 1, green: 235/255, blue: 204/255, alpha: 1))
-    static let sunset = Color(uiColor: UIColor(red: 242/255, green: 208/255, blue: 164/255, alpha: 1))
-}
-
 struct CatGalleryView: View {
     
     @StateObject private var imageLoader = ImageLoader(cacheManager: CacheManager())
@@ -76,6 +71,7 @@ struct CatGalleryView: View {
     var descriptionText: some View {
         ScrollView {
             Text(breedDetails.description)
+                .padding(.horizontal)
         }
         .frame(height: 80)
     }
@@ -149,7 +145,13 @@ struct CatGalleryView: View {
         viewModel: CatViewModel(
             apiClient: MockAPIClient(
                 catImages: [
-                    CatModel(id: "beng", width: 1000, height: 1000, url: URL(string: "www.example.com")!, breeds: [])
+                    CatModel(
+                        id: "beng",
+                        width: 1000,
+                        height: 1000,
+                        url: URL(string: "https://cdn2.thecatapi.com/images/ave.jpg")!,
+                        breeds: []
+                    )
                 ]
             )
         ),
@@ -163,4 +165,5 @@ struct CatGalleryView: View {
             wikipediaURL: ""
         )
     )
+    .environmentObject(ImageLoader(cacheManager: CacheManager()))
 }
