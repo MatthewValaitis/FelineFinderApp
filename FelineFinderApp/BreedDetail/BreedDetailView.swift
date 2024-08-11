@@ -20,7 +20,7 @@ struct BreedDetailsView: View {
                 case .loading:
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .foregroundColor(.white)
+                        .tint(.white)
                 case .loaded:
                     breedDetailsView
                 case .error:

@@ -21,7 +21,7 @@
 		5C9D16282C6765160032C177 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16272C6765160032C177 /* ImageLoader.swift */; };
 		5C9D162A2C6766430032C177 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16292C6766430032C177 /* CachedAsyncImage.swift */; };
 		5C9D162E2C6777990032C177 /* ExpandedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D162D2C6777990032C177 /* ExpandedImageView.swift */; };
-		5C9D16412C677D7A0032C177 /* FelineFinderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */; };
+		5CB6DEDD2C68CB1F0069A8C8 /* BreedSelectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6DEDC2C68CB1F0069A8C8 /* BreedSelectionViewModelTests.swift */; };
 		5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */; };
 		5CE7F3832C679C1800F2B9DC /* BreedDetail+stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */; };
 		5CF5AAB62C67AC4D00678880 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9D16472C677D8B0032C177 /* MockAPIClient.swift */; };
@@ -55,9 +55,9 @@
 		5C9D16292C6766430032C177 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		5C9D162D2C6777990032C177 /* ExpandedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedImageView.swift; sourceTree = "<group>"; };
 		5C9D163E2C677D7A0032C177 /* FelineFinderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FelineFinderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FelineFinderAppTests.swift; sourceTree = "<group>"; };
 		5C9D16472C677D8B0032C177 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 		5C9D164A2C6782330032C177 /* FelineFinderApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FelineFinderApp.xctestplan; sourceTree = "<group>"; };
+		5CB6DEDC2C68CB1F0069A8C8 /* BreedSelectionViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedSelectionViewModelTests.swift; sourceTree = "<group>"; };
 		5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		5CE7F3822C679C1800F2B9DC /* BreedDetail+stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreedDetail+stub.swift"; sourceTree = "<group>"; };
 		EC03552F2C67D2EB00A49DC2 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
@@ -104,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				EC0355312C67EBC800A49DC2 /* BreedDetail */,
-				5C9D16242C6764050032C177 /* Utilities */,
 				5C9D161B2C67556B0032C177 /* BreedSelection */,
 				5C9D16182C67513B0032C177 /* SubViews */,
 				5C9D16002C6743790032C177 /* FelineFinderAppApp.swift */,
@@ -162,18 +161,11 @@
 			path = BreedSelection;
 			sourceTree = "<group>";
 		};
-		5C9D16242C6764050032C177 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		5C9D163F2C677D7A0032C177 /* FelineFinderAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				5C9D16402C677D7A0032C177 /* FelineFinderAppTests.swift */,
 				5CE7F3802C6784E300F2B9DC /* APIClientTests.swift */,
+				5CB6DEDC2C68CB1F0069A8C8 /* BreedSelectionViewModelTests.swift */,
 			);
 			path = FelineFinderAppTests;
 			sourceTree = "<group>";
@@ -319,8 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CB6DEDD2C68CB1F0069A8C8 /* BreedSelectionViewModelTests.swift in Sources */,
 				5CE7F3812C6784E900F2B9DC /* APIClientTests.swift in Sources */,
-				5C9D16412C677D7A0032C177 /* FelineFinderAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

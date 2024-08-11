@@ -30,7 +30,7 @@ struct CatAPIClient: APIClient {
     }
     
     
-    func makeURL(path: Path, limit: Int = 100, breed: String? = nil) throws -> URL {
+    func makeURL(path: Path, limit: Int = 100) throws -> URL {
         guard var url = URL(string: baseURL) else {
             throw APIClientError.failedToCreateURL
         }
